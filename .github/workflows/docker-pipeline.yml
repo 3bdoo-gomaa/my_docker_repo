@@ -26,5 +26,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-docker-repo:latest
+          tags: ${{ secrets.abdogom22 }}/my-docker-repo:latest
 
