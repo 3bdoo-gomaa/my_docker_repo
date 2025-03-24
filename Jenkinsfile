@@ -17,8 +17,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying the application...'
-                echo "deploying with ${SERVER_CREDENTIAL}"
-                sh "${SERVER_CREDENTIAL}"
+                withCredentials([usernamePassword(credentialsId: 'github-Credentials', usernameVariable: 'GIT_USER', passwordVariable: 'GIT_PASS')]) 
+                {sh 'git clone https://${GIT_USER}:${GIT_PASS}@github.com/3bdoo-gomaa/my_docker_repo.git'}
+
             }
         }
     }
