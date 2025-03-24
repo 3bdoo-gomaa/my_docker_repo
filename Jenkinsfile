@@ -1,8 +1,5 @@
 pipeline {
     agent any  // Run on any available agent
-    environment {
-        SERVER_CREDENTIAL =credential('server-credential')
-    }
     stages {
         stage('Build') {
             steps {
